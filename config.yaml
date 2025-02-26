@@ -1,0 +1,15 @@
+
+inputdir: '/home/sunyme95/CTCELLS/wgs_pipeline/workflow/data1'
+
+outputdir: '/home/sunyme95/CTCELLS/wgs_pipeline/workflow/results1'
+
+ref_genome: '/home/sunyme95/CTCELLS/reference/bwa-mem/genome.fa'
+
+window_size: 10000
+
+ref_vcf: '/home/sunyme95/CTCELLS/wgs_pipeline/workflow/reference/bwa-mem/resource/1000G_phase1.snps.high_confidence.b37.vcf.gz'
+
+adaptor_seq: 'AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC'
+adaptor_seq2: 'AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCATT'
+
+trim: true
