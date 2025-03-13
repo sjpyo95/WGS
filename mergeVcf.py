@@ -44,8 +44,10 @@ def writeSampleInfoTable(infoDict, df, outputPrefix):
 	print(f'Sample Information table saved to {outFile}')
 
 def recodeGenotype(gt, alleleIndex):
-	if '.' in gt:
-		return './.'
+	if not ('/' in gt):
+		if gt == '0': return '0/0'
+		elif gt == '1': return '1/1'
+		else: return './.'
 	alleles = gt.split('/')
 	new_alleles = []
 	for a in alleles:
@@ -56,7 +58,7 @@ def recodeGenotype(gt, alleleIndex):
 		else:
 			new_alleles.append('0')
 	return '/'.join(new_alleles)
-
+	
 def updateInfoField(info, alleleIndex):
 	parts = info.split(';')
 	new_parts = []
@@ -114,7 +116,6 @@ def processVcfLine(line):
 	return entries
 
 def mergeVcf(vcfs, infoDict, outputPrefix):
-	
 	merged_variants = {}
 	sample_names = []
 	for vcfPath in vcfs:
